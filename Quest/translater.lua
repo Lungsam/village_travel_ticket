@@ -1,0 +1,9 @@
+gameforge.map_warp = {}
+gameforge.map_warp._180_select = "„‰ÿﬁ… ÌÊ‰€«‰ "
+gameforge.map_warp._190_select = "„ﬁ«ÿ⁄… Ì«Ì«‰€ "
+gameforge.map_warp._200_select = "„‰ÿﬁ… ÃÊ«‰ "
+gameforge.map_warp._210_select = "„‰ÿﬁ… »ÊﬂÌÊ‰€ "
+gameforge.map_warp._220_select = "„‰ÿﬁ… »ÌÊ‰€„Ê "
+gameforge.map_warp._230_select = "„ﬁ«ÿ⁄… »Ûﬂ—« "
+gameforge.map_warp._98_stringFormat = "⁄œœ «· ‰ﬁ·«  «·„ »ﬁÌ…:%d "
+gameforge.locale.cancel = "≈·€«¡ "

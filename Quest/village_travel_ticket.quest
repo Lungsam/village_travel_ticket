@@ -1,0 +1,87 @@
+--[[
+	Village travel ticket
+	By: Khaled
+--]]
+quest village_travel_ticket begin
+	state start begin
+		when 56001.use begin
+			if false == pc.can_warp() then return end
+			if pc.getqf("warp_count_"..item.get_id().."_id") == 0 then
+				pc.setqf("warp_count_"..item.get_id().."_id", 5)
+			end
+			say(string.format(gameforge.map_warp._98_stringFormat, pc.getqf("warp_count_"..item.get_id().."_id")))
+
+			local empire = pc.get_empire()
+			local sub_set2 = 3
+			if empire==1 then
+				sub_set2 = select(gameforge.map_warp._180_select, gameforge.map_warp._190_select, gameforge.locale.cancel) --6441, 6443
+			elseif  empire ==2 then
+				sub_set2 = select(gameforge.map_warp._200_select, gameforge.map_warp._210_select, gameforge.locale.cancel) --6445, 6446
+			elseif  empire ==3 then
+				sub_set2 = select(gameforge.map_warp._220_select, gameforge.map_warp._230_select, gameforge.locale.cancel) --6449, 6450
+			end
+			if sub_set2 == 3 then return end
+			if sub_set2 ~= 3 then
+				if sub_set2 == 1 then
+					if empire == 1 then
+						if pc.getqf("warp_count_"..item.get_id().."_id") == 1 then
+							pc.warp(465800, 958300)
+							pc.delqf("warp_count_"..item.get_id().."_id")
+							item.remove()
+						else
+							pc.warp(465800, 958300)
+							pc.setqf("warp_count_"..item.get_id().."_id", pc.getqf("warp_count_"..item.get_id().."_id")-1)
+						end
+					elseif empire == 2 then
+						if pc.getqf("warp_count_"..item.get_id().."_id") == 1 then
+							pc.warp(52600, 154100)
+							pc.delqf("warp_count_"..item.get_id().."_id")
+							item.remove()
+						else
+							pc.warp(52600, 154100)
+							pc.setqf("warp_count_"..item.get_id().."_id", pc.getqf("warp_count_"..item.get_id().."_id")-1)
+						end
+					elseif empire == 3 then
+						if pc.getqf("warp_count_"..item.get_id().."_id") == 1 then
+							pc.warp(964800, 273800)
+							pc.delqf("warp_count_"..item.get_id().."_id")
+							item.remove()
+						else
+							pc.warp(964800, 273800)
+							pc.setqf("warp_count_"..item.get_id().."_id", pc.getqf("warp_count_"..item.get_id().."_id")-1)
+						end
+					end
+				elseif sub_set2 == 2 then
+					if empire == 1 then
+						if pc.getqf("warp_count_"..item.get_id().."_id") == 1 then
+							pc.warp(357100, 877300)
+							pc.delqf("warp_count_"..item.get_id().."_id")
+							item.remove()
+						else
+							pc.warp(357100, 877300)
+							pc.setqf("warp_count_"..item.get_id().."_id", pc.getqf("warp_count_"..item.get_id().."_id")-1)
+						end
+					elseif empire == 2 then
+						if pc.getqf("warp_count_"..item.get_id().."_id") == 1 then
+							pc.warp(137400, 240100)
+							pc.delqf("warp_count_"..item.get_id().."_id")
+							item.remove()
+						else
+							pc.warp(137400, 240100)
+							pc.setqf("warp_count_"..item.get_id().."_id", pc.getqf("warp_count_"..item.get_id().."_id")-1)
+						end
+					elseif empire == 3 then
+						if pc.getqf("warp_count_"..item.get_id().."_id") == 1 then
+							pc.warp(867700, 240200)
+							pc.delqf("warp_count_"..item.get_id().."_id")
+							item.remove()
+						else
+							pc.warp(867700, 240200)
+							pc.setqf("warp_count_"..item.get_id().."_id", pc.getqf("warp_count_"..item.get_id().."_id")-1)
+						end
+					end
+				end
+			end
+		end -- end_of_chat
+	end -- end_of_state
+end -- end_of_quest
